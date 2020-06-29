@@ -1,10 +1,8 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {Observable} from 'rxjs';
-import {IsLoadingService} from '@service-work/is-loading';
+import {AngularFireDatabase} from '@angular/fire/database';
 
-import {LogDataService} from './services/log-data.service';
-import {DataList} from './models/data-list.interface';
 import {LogItem} from './models/log-item.interface';
 
 @Component({
@@ -12,24 +10,25 @@ import {LogItem} from './models/log-item.interface';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-    data$: Observable<DataList<LogItem>>;
+    items$: Observable<LogItem[]>;
 
     constructor(
-        private loadingService: IsLoadingService,
-        private dataService: LogDataService
-    ) { }
-
-    ngOnInit(): void {
-        this.getData();
+        private db: AngularFireDatabase
+    ) {
+        this.items$ = db.list<LogItem>('/events').valueChanges();
     }
 
-    getData(event?: MouseEvent): void {
+    public addItem(event?: MouseEvent): void {
         if (event) {
             event.preventDefault();
         }
-        this.loadingService.remove();
-        this.data$ = this.loadingService.add(this.dataService.getItemsList());
+        // const item = {
+        //     eventId: 11111,
+        //     animalId: 1,
+        //     cowId: 2
+        // } as LogItem;
+        // this.db.list<LogItem>('/events').push(item);
     }
 }

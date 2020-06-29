@@ -2,10 +2,10 @@
 <div class="container mt-5">
 
     <div class="mb-3">
-        <button type="button" class="btn btn-primary" (click)="getData($event)">Update</button>
+        <button type="button" class="btn btn-primary" (click)="addItem($event)">Add Item</button>
     </div>
 
-    <div class="table-responsive mb-3">
+    <div class="table-responsive mb-3" *ngIf="items$ | async; let items; else loading">
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
@@ -24,7 +24,7 @@
             </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of (data$ | async)?.result">
+                <tr *ngFor="let item of items">
                     <td>{{ item.eventId }}</td>
                     <td>{{ item.type }}</td>
                     <td>{{ item.animalId }}</td>
@@ -44,21 +44,23 @@
         </table>
     </div>
 
-    <div class="sk-spinner-overlay" [hidden]="!('default' | swIsLoading | async)">
-        <div class="sk-circle">
-            <div class="sk-circle1 sk-child"></div>
-            <div class="sk-circle2 sk-child"></div>
-            <div class="sk-circle3 sk-child"></div>
-            <div class="sk-circle4 sk-child"></div>
-            <div class="sk-circle5 sk-child"></div>
-            <div class="sk-circle6 sk-child"></div>
-            <div class="sk-circle7 sk-child"></div>
-            <div class="sk-circle8 sk-child"></div>
-            <div class="sk-circle9 sk-child"></div>
-            <div class="sk-circle10 sk-child"></div>
-            <div class="sk-circle11 sk-child"></div>
-            <div class="sk-circle12 sk-child"></div>
+    <ng-template #loading>
+        <div class="sk-spinner-overlay">
+            <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
         </div>
-    </div>
+    </ng-template>
 
 </div>
