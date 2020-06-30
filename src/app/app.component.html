@@ -35,7 +35,7 @@
                     <td>{{ item.healthIndex }}</td>
                     <td class="small">{{ item.startDateTime*1000 | date:'medium' }}</td>
                     <td  class="small">
-                        <span *ngIf="item.endDate">{{ item.endDate*1000 | date:'medium' }}</span>
+                        <span *ngIf="item.endDateTime">{{ item.endDateTime*1000 | date:'medium' }}</span>
                     </td>
                     <td class="small">{{ item.reportingDateTime*1000 | date:'medium' }}</td>
                     <td>
@@ -44,7 +44,7 @@
                                 <button type="button" class="btn btn-info btn-sm" (click)="updateItem(item, $event)">
                                     Edit
                                 </button>
-                                <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteItem(item.key, $event)">
+                                <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteItem(item, $event)">
                                     Delete
                                 </button>
                             </div>

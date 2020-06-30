@@ -37,20 +37,14 @@ export class AppComponent {
             event.preventDefault();
         }
 
-        this.modalService.onHide
-            .pipe(take(1))
-            .subscribe((reason: string) => {
-                if (reason === 'submit') {
-                    console.log(this.bsModalRef.content.item);
-                }
-            });
-
         this.bsModalRef = this.modalService.show(ModalEventItemComponent, {
+            class: 'modal-lg',
             animated: false,
             ignoreBackdropClick: true,
             initialState: {
                 title: `Edit Item #${item.eventId}`,
-                item: Object.assign({}, item)
+                item: Object.assign({}, item),
+                itemsRef: this.itemsRef
             }
         } as ModalOptions);
     }
@@ -59,40 +53,50 @@ export class AppComponent {
         if (event) {
             event.preventDefault();
         }
-        // const item = {
-        //     eventId: 11111,
-        //     animalId: 1,
-        //     cowId: 2
-        // } as LogItem;
-        // this.itemsRef.push(item);
 
         this.modalService.onHide
             .pipe(take(1))
             .subscribe((reason: string) => {
                 if (reason === 'submit') {
-                    console.log(this.bsModalRef.content.item);
+                    setTimeout(() => {
+                        alert('New item added successfully.');
+                    }, 0);
                 }
             });
 
         this.bsModalRef = this.modalService.show(ModalEventItemComponent, {
+            class: 'modal-lg',
             animated: false,
             ignoreBackdropClick: true,
             initialState: {
-                title: 'Add Item'
+                title: 'Add Item',
+                itemsRef: this.itemsRef
             }
         } as ModalOptions);
     }
 
-    public deleteItem(key: string, event?: MouseEvent): void {
+    public deleteItem(item: LogItem, event?: MouseEvent): void {
         if (event) {
             event.preventDefault();
+        }
+        if (!item.deletable) {
+            setTimeout(() => {
+                alert('This item is not deletable.');
+            }, 0);
+            return;
         }
 
         this.modalService.onHide
             .pipe(take(1))
             .subscribe((reason: string) => {
                 if (reason === 'yes') {
-                    this.itemsRef.remove(key);
+                    this.itemsRef.remove(item.key)
+                        .then((e) => {
+                            alert('The item was successfully deleted.');
+                        })
+                        .catch((e) => {
+                            alert('You dont have access!');
+                        });
                 }
             });
 

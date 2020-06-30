@@ -4,7 +4,7 @@ export interface LogItem {
     cowId: number;
     daysInLactation: number;
     deletable: boolean;
-    endDate: number;
+    endDateTime: number;
     eventId: number;
     healthIndex: number;
     lactationNumber: number;

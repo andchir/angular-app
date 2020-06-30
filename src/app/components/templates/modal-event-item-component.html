@@ -1,0 +1,183 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" #formEl>
+    <div class="modal-header"><h5 class="modal-title">{{ title }}</h5></div>
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldEventType">
+                        Event Type
+                    </label>
+                    <input id="fieldEventType" type="text" class="form-control"
+                           formControlName="type"
+                           [ngClass]="{'is-invalid': form.controls.type.touched && !form.controls.type.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldAgeInDays">
+                        Age Days
+                    </label>
+                    <input id="fieldAgeInDays" type="number" class="form-control"
+                           formControlName="ageInDays"
+                           [ngClass]="{'is-invalid': form.controls.ageInDays.touched && !form.controls.ageInDays.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldAnimalId">
+                        Animal ID
+                    </label>
+                    <input id="fieldAnimalId" type="number" class="form-control"
+                           formControlName="animalId"
+                           [ngClass]="{'is-invalid': form.controls.animalId.touched && !form.controls.animalId.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldCowId">
+                        Cow ID
+                    </label>
+                    <input id="fieldCowId" type="number" class="form-control"
+                           formControlName="cowId"
+                           [ngClass]="{'is-invalid': form.controls.cowId.touched && !form.controls.cowId.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldDaysInLactation">
+                        Days in Lactation
+                    </label>
+                    <input id="fieldDaysInLactation" type="number" class="form-control"
+                           formControlName="daysInLactation"
+                           [ngClass]="{'is-invalid': form.controls.daysInLactation.touched && !form.controls.daysInLactation.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldLactationNumber">
+                        Lactation Number
+                    </label>
+                    <input id="fieldLactationNumber" type="number" class="form-control"
+                           formControlName="lactationNumber"
+                           [ngClass]="{'is-invalid': form.controls.lactationNumber.touched && !form.controls.lactationNumber.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldHealthIndex">
+                        Health Index
+                    </label>
+                    <input id="fieldHealthIndex" type="number" class="form-control"
+                           formControlName="healthIndex"
+                           [ngClass]="{'is-invalid': form.controls.healthIndex.touched && !form.controls.healthIndex.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox mt-0 mt-md-4">
+                        <input type="checkbox" class="custom-control-input" id="fieldDeletable" formControlName="deletable">
+                        <label class="custom-control-label" for="fieldDeletable">Deletable</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldStartDateTime">
+                        Start Time
+                    </label>
+                    <input id="fieldStartDateTime" type="text" class="form-control"
+                           formControlName="startDateTime"
+                           bsDatepicker
+                           [bsConfig]="{adaptivePosition: true, dateInputFormat: 'MMMM DD YYYY, hh:mm:ss A'}"
+                           [ngClass]="{'is-invalid': form.controls.startDateTime.touched && !form.controls.startDateTime.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldEndDateTime">
+                        End Time
+                    </label>
+                    <input id="fieldEndDateTime" type="text" class="form-control"
+                           formControlName="endDateTime"
+                           bsDatepicker
+                           [bsConfig]="{adaptivePosition: true, dateInputFormat: 'MMMM DD YYYY, hh:mm:ss A'}"
+                           [ngClass]="{'is-invalid': form.controls.endDateTime.touched && !form.controls.endDateTime.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldStartDateTime">
+                        Reporting Time
+                    </label>
+                    <input id="fieldReportingDateTime" type="text" class="form-control"
+                           formControlName="reportingDateTime"
+                           bsDatepicker
+                           [bsConfig]="{adaptivePosition: true, dateInputFormat: 'MMMM DD YYYY, hh:mm:ss A'}"
+                           [ngClass]="{'is-invalid': form.controls.reportingDateTime.touched && !form.controls.reportingDateTime.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldMinValueDateTime">
+                        Min Value Time
+                    </label>
+                    <input id="fieldMinValueDateTime" type="text" class="form-control"
+                           formControlName="minValueDateTime"
+                           bsDatepicker
+                           [bsConfig]="{adaptivePosition: true, dateInputFormat: 'MMMM DD YYYY, hh:mm:ss A'}"
+                           [ngClass]="{'is-invalid': form.controls.minValueDateTime.touched && !form.controls.minValueDateTime.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="alert alert-danger mb-0" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary px-5 mr-2"
+                [disabled]="submitted">Save</button>
+        <button type="button" class="btn btn-secondary mr-2"
+                [disabled]="submitted"
+                (click)="cancel($event)">Cancel</button>
+    </div>
+</form>
