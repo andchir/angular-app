@@ -12,4 +12,5 @@ export interface LogItem {
     reportingDateTime: number;
     startDateTime: number;
     type: string;
+    key?: string;
 }
