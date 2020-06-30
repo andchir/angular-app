@@ -54,7 +54,7 @@ export class AppComponent {
             event.preventDefault();
         }
 
-        this.modalService.onHide
+        this.modalService.onHidden
             .pipe(take(1))
             .subscribe((reason: string) => {
                 if (reason === 'submit') {
