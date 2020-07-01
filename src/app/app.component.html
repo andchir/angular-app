@@ -1,22 +1,34 @@
 
-<div class="container mt-5">
+<div class="p-3">
 
     <div class="mb-3">
         <button type="button" class="btn btn-primary" (click)="addItem($event)">Add Item</button>
     </div>
 
-    <div class="table-responsive mb-3" *ngIf="items$ | async; let items; else loading">
+    <ng-container *ngIf="items$ | async; let items; else loading">
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
                 <th>Event ID</th>
                 <th>Event Type</th>
+                <th>Alert Type</th>
                 <th>Animal ID</th>
                 <th>Cow ID</th>
                 <th>Age Days</th>
                 <th>Days in Lactation</th>
                 <th>Lactation Number</th>
+                <th>Old Lactation Number</th>
+                <th>Days In Pregnancy</th>
+                <th>Newborns</th>
+                <th>Calving Ease</th>
                 <th>Health Index</th>
+                <th>Heat Index Peak</th>
+                <th>Current Group ID</th>
+                <th>Current Group Name</th>
+                <th>New Group ID</th>
+                <th>New Group Name</th>
+                <th>Destination Group ID</th>
+                <th>Destination Group Name</th>
                 <th>Start Time</th>
                 <th>End Time</th>
                 <th>Reporting Time</th>
@@ -25,22 +37,9 @@
             </thead>
             <tbody>
                 <tr class="show-on-hover-parent" *ngFor="let item of items">
-                    <td>{{ item.eventId }}</td>
-                    <td>{{ item.type }}</td>
-                    <td>{{ item.animalId }}</td>
-                    <td>{{ item.cowId }}</td>
-                    <td>{{ item.ageInDays }}</td>
-                    <td>{{ item.daysInLactation }}</td>
-                    <td>{{ item.lactationNumber }}</td>
-                    <td>{{ item.healthIndex }}</td>
-                    <td class="small">{{ item.startDateTime*1000 | date:'medium' }}</td>
-                    <td  class="small">
-                        <span *ngIf="item.endDateTime">{{ item.endDateTime*1000 | date:'medium' }}</span>
-                    </td>
-                    <td class="small">{{ item.reportingDateTime*1000 | date:'medium' }}</td>
                     <td>
                         <div class="position-relative">
-                            <div class="show-on-hover position-absolute text-right pos-top-right">
+                            <div class="show-on-hover position-absolute pos-top-left">
                                 <button type="button" class="btn btn-info btn-sm" (click)="updateItem(item, $event)">
                                     Edit
                                 </button>
@@ -48,13 +47,40 @@
                                     Delete
                                 </button>
                             </div>
-                            <span class="small">{{ item.minValueDateTime*1000 | date:'medium' }}</span>
+                            {{ item.eventId }}
                         </div>
+                    </td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.alertType }}</td>
+                    <td>{{ item.animalId }}</td>
+                    <td>{{ item.cowId }}</td>
+                    <td>{{ item.ageInDays }}</td>
+                    <td>{{ item.daysInLactation }}</td>
+                    <td>{{ item.lactationNumber }}</td>
+                    <td>{{ item.oldLactationNumber }}</td>
+                    <td>{{ item.daysInPregnancy }}</td>
+                    <td>{{ item.newborns }}</td>
+                    <td>{{ item.calvingEase }}</td>
+                    <td>{{ item.healthIndex }}</td>
+                    <td>{{ item.heatIndexPeak }}</td>
+                    <td>{{ item.currentGroupId }}</td>
+                    <td>{{ item.currentGroupName }}</td>
+                    <td>{{ item.newGroupId }}</td>
+                    <td>{{ item.newGroupName }}</td>
+                    <td>{{ item.destinationGroup }}</td>
+                    <td>{{ item.destinationGroupName }}</td>
+                    <td class="small">{{ item.startDateTime*1000 | date:'medium' }}</td>
+                    <td  class="small">
+                        <span *ngIf="item.endDateTime">{{ item.endDateTime*1000 | date:'medium' }}</span>
+                    </td>
+                    <td class="small">{{ item.reportingDateTime*1000 | date:'medium' }}</td>
+                    <td class="small">
+                        <span *ngIf="item.minValueDateTime">{{ item.minValueDateTime*1000 | date:'medium' }}</span>
                     </td>
                 </tr>
             </tbody>
         </table>
-    </div>
+    </ng-container>
 
     <ng-template #loading>
         <div class="sk-spinner-overlay">

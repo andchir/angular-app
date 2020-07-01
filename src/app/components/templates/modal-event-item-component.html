@@ -6,24 +6,24 @@
             <div class="col-md-6">
 
                 <div class="form-group">
-                    <label class="d-block" for="fieldEventId">
-                        Event ID
-                    </label>
-                    <input id="fieldEventId" type="text" class="form-control"
-                           formControlName="eventId"
-                           [ngClass]="{'is-invalid': form.controls.eventId.touched && !form.controls.eventId.valid}">
-                </div>
-
-            </div>
-            <div class="col-md-6">
-
-                <div class="form-group">
                     <label class="d-block" for="fieldEventType">
                         Event Type
                     </label>
                     <input id="fieldEventType" type="text" class="form-control"
                            formControlName="type"
                            [ngClass]="{'is-invalid': form.controls.type.touched && !form.controls.type.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldAlertType">
+                        Alert Type
+                    </label>
+                    <input id="fieldAlertType" type="text" class="form-control"
+                           formControlName="alertType"
+                           [ngClass]="{'is-invalid': form.controls.alertType.touched && !form.controls.alertType.valid}">
                 </div>
 
             </div>
@@ -45,12 +45,12 @@
             <div class="col-md-6">
 
                 <div class="form-group">
-                    <label class="d-block" for="fieldAnimalId">
-                        Animal ID
+                    <label class="d-block" for="fieldCurrentGroupName">
+                        Current Group Name
                     </label>
-                    <input id="fieldAnimalId" type="number" class="form-control"
-                           formControlName="animalId"
-                           [ngClass]="{'is-invalid': form.controls.animalId.touched && !form.controls.animalId.valid}">
+                    <input id="fieldCurrentGroupName" type="text" class="form-control"
+                           formControlName="currentGroupName"
+                           [ngClass]="{'is-invalid': form.controls.currentGroupName.touched && !form.controls.currentGroupName.valid}">
                 </div>
 
             </div>
@@ -60,12 +60,66 @@
             <div class="col-md-6">
 
                 <div class="form-group">
-                    <label class="d-block" for="fieldCowId">
-                        Cow ID
+                    <label class="d-block" for="fieldNewGroupName">
+                        New Group Name
                     </label>
-                    <input id="fieldCowId" type="number" class="form-control"
-                           formControlName="cowId"
-                           [ngClass]="{'is-invalid': form.controls.cowId.touched && !form.controls.cowId.valid}">
+                    <input id="fieldNewGroupName" type="text" class="form-control"
+                           formControlName="newGroupName"
+                           [ngClass]="{'is-invalid': form.controls.newGroupName.touched && !form.controls.newGroupName.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldDestinationGroupName">
+                        Destination Group Name
+                    </label>
+                    <input id="fieldDestinationGroupName" type="text" class="form-control"
+                           formControlName="destinationGroupName"
+                           [ngClass]="{'is-invalid': form.controls.destinationGroupName.touched && !form.controls.destinationGroupName.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldNewborns">
+                        Newborns
+                    </label>
+                    <input id="fieldNewborns" type="number" class="form-control"
+                           formControlName="newborns"
+                           [ngClass]="{'is-invalid': form.controls.newborns.touched && !form.controls.newborns.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldCalvingEase">
+                        Calving Ease
+                    </label>
+                    <input id="fieldCalvingEase" type="text" class="form-control"
+                           formControlName="calvingEase"
+                           [ngClass]="{'is-invalid': form.controls.calvingEase.touched && !form.controls.calvingEase.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldDaysInPregnancy">
+                        Days In Pregnancy
+                    </label>
+                    <input id="fieldDaysInPregnancy" type="number" class="form-control"
+                           formControlName="daysInPregnancy"
+                           [ngClass]="{'is-invalid': form.controls.daysInPregnancy.touched && !form.controls.daysInPregnancy.valid}">
                 </div>
 
             </div>
@@ -99,12 +153,39 @@
             <div class="col-md-6">
 
                 <div class="form-group">
+                    <label class="d-block" for="fieldOldLactationNumber">
+                        Old Lactation Number
+                    </label>
+                    <input id="fieldOldLactationNumber" type="number" class="form-control"
+                           formControlName="oldLactationNumber"
+                           [ngClass]="{'is-invalid': form.controls.oldLactationNumber.touched && !form.controls.oldLactationNumber.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
                     <label class="d-block" for="fieldHealthIndex">
                         Health Index
                     </label>
                     <input id="fieldHealthIndex" type="number" class="form-control"
                            formControlName="healthIndex"
                            [ngClass]="{'is-invalid': form.controls.healthIndex.touched && !form.controls.healthIndex.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label class="d-block" for="fieldHeatIndexPeak">
+                        Heat Index Peak
+                    </label>
+                    <input id="fieldHeatIndexPeak" type="number" class="form-control"
+                           formControlName="heatIndexPeak"
+                           [ngClass]="{'is-invalid': form.controls.heatIndexPeak.touched && !form.controls.heatIndexPeak.valid}">
                 </div>
 
             </div>
@@ -145,7 +226,7 @@
             <div class="col-md-6">
 
                 <div class="form-group">
-                    <label class="d-block" for="fieldStartDateTime">
+                    <label class="d-block" for="fieldReportingDateTime">
                         Reporting Time
                     </label>
                     <input id="fieldReportingDateTime" type="text" class="form-control"

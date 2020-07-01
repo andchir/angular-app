@@ -31,15 +31,21 @@ export class ModalEventItemComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.form = this.fb.group({
-            eventId: [this.item.eventId || null, Validators.required],
             type: [this.item.type || null, Validators.required],
+            alertType: [this.item.alertType],
             ageInDays: [this.item.ageInDays || null, Validators.required],
-            animalId: [this.item.animalId || null, Validators.required],
-            cowId: [this.item.cowId || null],
             daysInLactation: [this.item.daysInLactation || null],
             deletable: [this.item.deletable || false],
             healthIndex: [this.item.healthIndex || null],
+            heatIndexPeak: [this.item.heatIndexPeak || null],
             lactationNumber: [this.item.lactationNumber || null],
+            oldLactationNumber: [this.item.oldLactationNumber || null],
+            currentGroupName: [this.item.currentGroupName || null],
+            newGroupName: [this.item.newGroupName || null],
+            destinationGroupName: [this.item.destinationGroupName || null],
+            daysInPregnancy: [this.item.daysInPregnancy || null],
+            newborns: [this.item.newborns || null],
+            calvingEase: [this.item.calvingEase || null],
             startDateTime: [
                 typeof this.item.startDateTime !== 'undefined'
                     ? new Date(this.item.startDateTime * 1000)

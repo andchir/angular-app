@@ -1,5 +1,6 @@
 
 .pos-top-right { left: auto; right: 0; top: 0; }
+.pos-top-left { right: auto; left: 0; top: 0; }
 
 /* show-on-hover */
 .show-on-hover-parent {}
