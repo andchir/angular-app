@@ -79,21 +79,11 @@ export class AppComponent {
         if (event) {
             event.preventDefault();
         }
-        if (!item.deletable) {
-            setTimeout(() => {
-                alert('This item is not deletable.');
-            }, 0);
-            return;
-        }
-
         this.modalService.onHide
             .pipe(take(1))
             .subscribe((reason: string) => {
                 if (reason === 'yes') {
                     this.itemsRef.remove(item.key)
-                        .then((e) => {
-                            alert('The item was successfully deleted.');
-                        })
                         .catch((e) => {
                             alert('You dont have access!');
                         });

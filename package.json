@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --servePath=\"data-grid-app\" --baseHref \"/data-grid-app/\"",
-    "build": "ng build data-grid-app --prod --progress --outputHashing=none --namedChunks --baseHref \"\" --deployUrl \"bundle/\" --outputPath \"public/bundle\"",
+    "start": "ng serve --open",
+    "build": "ng build data-grid-app --prod --progress --outputHashing=none --namedChunks --baseHref=\"\" --deployUrl=\"\" --outputPath=\"public/bundle\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

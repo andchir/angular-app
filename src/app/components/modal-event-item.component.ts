@@ -31,6 +31,8 @@ export class ModalEventItemComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.form = this.fb.group({
+            eventId: [this.item.eventId || null, Validators.required],
+            type: [this.item.type || null, Validators.required],
             ageInDays: [this.item.ageInDays || null, Validators.required],
             animalId: [this.item.animalId || null, Validators.required],
             cowId: [this.item.cowId || null],
@@ -59,8 +61,7 @@ export class ModalEventItemComponent implements OnInit, OnDestroy {
                 typeof this.item.minValueDateTime !== 'undefined'
                     ? new Date(this.item.minValueDateTime * 1000)
                     : null
-            ],
-            type: [this.item.type || null, Validators.required]
+            ]
         });
         this.form.valueChanges
             .pipe(takeUntil(this.destroyed$))

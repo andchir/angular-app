@@ -6,6 +6,18 @@
             <div class="col-md-6">
 
                 <div class="form-group">
+                    <label class="d-block" for="fieldEventId">
+                        Event ID
+                    </label>
+                    <input id="fieldEventId" type="text" class="form-control"
+                           formControlName="eventId"
+                           [ngClass]="{'is-invalid': form.controls.eventId.touched && !form.controls.eventId.valid}">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
                     <label class="d-block" for="fieldEventType">
                         Event Type
                     </label>
@@ -15,6 +27,9 @@
                 </div>
 
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-6">
 
                 <div class="form-group">
@@ -27,9 +42,6 @@
                 </div>
 
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-6">
 
                 <div class="form-group">
@@ -42,6 +54,9 @@
                 </div>
 
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-6">
 
                 <div class="form-group">
@@ -54,9 +69,6 @@
                 </div>
 
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-6">
 
                 <div class="form-group">
@@ -69,6 +81,9 @@
                 </div>
 
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-6">
 
                 <div class="form-group">
@@ -81,9 +96,6 @@
                 </div>
 
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-6">
 
                 <div class="form-group">
@@ -93,16 +105,6 @@
                     <input id="fieldHealthIndex" type="number" class="form-control"
                            formControlName="healthIndex"
                            [ngClass]="{'is-invalid': form.controls.healthIndex.touched && !form.controls.healthIndex.valid}">
-                </div>
-
-            </div>
-            <div class="col-md-6">
-
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox mt-0 mt-md-4">
-                        <input type="checkbox" class="custom-control-input" id="fieldDeletable" formControlName="deletable">
-                        <label class="custom-control-label" for="fieldDeletable">Deletable</label>
-                    </div>
                 </div>
 
             </div>
@@ -165,6 +167,19 @@
                            bsDatepicker
                            [bsConfig]="{adaptivePosition: true, dateInputFormat: 'MMMM DD YYYY, hh:mm:ss A'}"
                            [ngClass]="{'is-invalid': form.controls.minValueDateTime.touched && !form.controls.minValueDateTime.valid}">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox mt-0 mt-md-4">
+                        <input type="checkbox" class="custom-control-input" id="fieldDeletable" formControlName="deletable">
+                        <label class="custom-control-label" for="fieldDeletable">Deletable</label>
+                    </div>
                 </div>
 
             </div>
