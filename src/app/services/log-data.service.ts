@@ -12,7 +12,7 @@ import {LogItem} from '../models/log-item.interface';
 })
 export class LogDataService {
 
-    private baseUrl = '/data-grid-app/';
+    private baseUrl = '';
     public headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest'
